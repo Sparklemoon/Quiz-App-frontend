@@ -3,6 +3,8 @@ import React from 'react'
 import animalsImage from "../../../static/assets/spirit-animal.jpg"
 
 export default function home(props) {
+    props.handleScoreReset()
+
     function handleClick() {
         props.history.push("/quiz")
     }

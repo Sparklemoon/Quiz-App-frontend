@@ -1,4 +1,4 @@
-html {
+body {
     margin: 0px;
 }
 
@@ -11,11 +11,18 @@ a {
     box-sizing: border-box;
 }
 
-.app {
+.app-wrapper {
     width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.app {
+    width: 500px;
     height: 100vh;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    background-color: lightgreen;
 
 
 }

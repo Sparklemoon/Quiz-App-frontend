@@ -9,7 +9,6 @@ export default class Quiz extends Component {
         this.state = {
             data: [],
             currentQuestion: 0,
-            score: 0,
             isLoading: true,
             error: false
         }
@@ -18,7 +17,7 @@ export default class Quiz extends Component {
     }
 
     componentDidMount() {
-        fetch("http://127.0.0.1:5000/question/get")
+        fetch("https://quiz-app-mkj.herokuapp.com/question/get")
         .then(response => response.json())
         .then(data => {
             this.setState({
@@ -43,10 +42,8 @@ export default class Quiz extends Component {
     }
 
     handleAnswer(answerValue) {
-        this.setState({
-            score: this.state.score + answerValue,
-            
-        })
+        this.props.handleScoreUpdate(answerValue)
+        
 
         if (this.state.currentQuestion === this.state.data.length -1) {
             this.props.history.push("/results")
