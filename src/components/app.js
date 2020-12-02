@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 
 import Home from "./pages/home";
+import Quiz from "./pages/quiz";
 
 export default class App extends Component {
   render() {
@@ -9,9 +10,10 @@ export default class App extends Component {
       <div className='app'>
         <BrowserRouter>
         <div>
-          <h2>Hello</h2>
+  
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/quiz" component={Quiz} />
           </Switch>
         </div>
         </BrowserRouter>
